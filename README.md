@@ -9,7 +9,7 @@
 
 ### Ideas 
 - Node 'levels up' from white to black levels
-- Roll tracker; keep count of subs and sweeps scored and conceded
+- Roll tracker; keep count of subs and sweeps scored and conceded, problem positions
 
 ### Stack
 - React? (npx CRA)
@@ -32,3 +32,8 @@
 - Video / Gif of technique
 - Key Details Breakdown
 - 'Drilling' mode; concept / order checking questions
+
+### ToDo
+
+### Progress
+- Basic App outline, CSS and toolbars

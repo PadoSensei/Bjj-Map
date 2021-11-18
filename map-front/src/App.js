@@ -1,23 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
+import Breadcrumbs from "./ui-components/Breadcrumbs";
+import Content from "./ui-components/Content";
+import Header from "./ui-components/Header";
+import LeftMenu from "./ui-components/LeftMenu";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header />
+      <LeftMenu />
+      <Breadcrumbs />
+      <Content />
     </div>
   );
 }
