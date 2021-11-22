@@ -1,11 +1,16 @@
 import React from 'react';
 import css from './leftmenu.module.css';
+import router from './router';
 import Toolbar from './Toolbar';
 
 function LeftMenu(props) {
+  const list =[
+    { name: 'home', onClick: () => router.setRoute('home') },
+    { name: 'help', onClick: () => router.setRoute('help') }
+  ];
   return (
     <div className={css.container}>
-      <Toolbar type="primary" location={['vertical']} />
+      <Toolbar list={list} type="primary" location={['vertical']} />
     </div>
   )
 }

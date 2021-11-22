@@ -1,10 +1,19 @@
 import React from 'react';
 import css from './breadcrumbs.module.css';
+import router from './router';
 
-function Breadcrumbs() {
+function Breadcrumbs({ list }) {
   return (
     <div className={css.container}>
-      <span className={css.item}>Breadcrumbs</span>
+      {
+        list.map(item => (
+          <span key={item}>
+            <span 
+            onClick={() => router.setRoute(item)}
+            className={css.item}>{item}</span>
+          </span>
+        ))
+      }
     </div>
   )
 }

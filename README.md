@@ -24,7 +24,7 @@
 
 #### Student Mode
 - Enroll in class / progress track
-- Import / Export nodes
+- Import / Export nodes to other app users
 - Comment on Node
 - 'Drill' Node with concept checking questions. 
 
@@ -37,3 +37,4 @@
 
 ### Progress
 - Basic App outline, CSS and toolbars
+- Routing Added

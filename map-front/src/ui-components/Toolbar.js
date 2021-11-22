@@ -2,15 +2,13 @@ import React from 'react';
 import IconButton from './IconButton';
 import css from './toolbar.module.css';
 
-function Toolbar({ type, location }) {
+function Toolbar({ type, location, list }) {
   let className = css.container;
-  const list =[
-    { name: 'home', onClick: () => alert('Home click!') },
-    { name: 'help', onClick: () => alert('Help click!') }
-  ];
+  
   location.forEach(item => {
     className += ' ' + css[item]
   })
+  
   return (
     <div className={className}>
         {list.map((item) => (
