@@ -31,7 +31,7 @@
 #### Node
 - Video / Gif of technique
 - Key Details Breakdown
-- 'Drilling' mode; concept / order checking questions
+- 'Drilling' mode; concept / order checking questions / SRT cards
 
 ### ToDo
 
@@ -39,3 +39,4 @@
 - Basic App outline, CSS and toolbars
 - Routing Added
 - Data repository methods for local storage added
+- Home screen interface - add / select / delete maps
