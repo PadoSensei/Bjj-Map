@@ -38,3 +38,4 @@
 ### Progress
 - Basic App outline, CSS and toolbars
 - Routing Added
+- Data repository methods for local storage added
