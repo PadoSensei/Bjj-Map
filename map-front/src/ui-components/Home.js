@@ -3,6 +3,7 @@ import repository from './repository';
 import Toolbar from './Toolbar';
 import Card from './Card';
 import css from './home.module.css';
+import router from './router';
 
 // Refactor to functional component with hooks? 
 class Home extends React.Component {
@@ -37,6 +38,10 @@ class Home extends React.Component {
     this.setState({list: repository.getList({level: 0})});
   }
 
+  getMap(id) {
+    router.setRoute('map', id);
+  }
+
   render() {
     return (
       <>
@@ -46,6 +51,7 @@ class Home extends React.Component {
           {
             this.state.list.map(item => (
               <div className={css.item}key={item.id}>
+                <button onClick={() => this.getMap(item.id)}>Go to map...</button>
                 <Card 
                   id={item.id} 
                   name={item.name} 
