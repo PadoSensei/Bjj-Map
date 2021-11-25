@@ -1,5 +1,6 @@
 import React from 'react';
 import Details from './Details';
+import Toolbar from './Toolbar';
 import repository from './repository';
 import router from './router';
 import css from './map.module.css';
@@ -32,11 +33,22 @@ class Map extends React.Component {
     this.setState({ comment });
   }
 
+  actionList = [
+    { name: 'add', onClick: () => this.add() },
+    { name: 'delete', onClick: () => this.delete() }
+  ];
+
   render(){
     return (
       <>
         <h1>Map</h1>
         <div className={css.container}>
+          <Toolbar 
+            type="alert"
+            location={['right', 'bottom', 'vertical']}
+            list={this.actionList}
+          />
+        </div>
           <Details 
             id={this.state.id}
             level={this.state.level}
@@ -45,7 +57,6 @@ class Map extends React.Component {
             onChangeName={this.changeName}
             onChangeComment={this.changeComment}
           />
-        </div>
       </>
     )
   }
