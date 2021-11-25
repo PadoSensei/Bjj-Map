@@ -4,6 +4,7 @@ import Toolbar from './Toolbar';
 import repository from './repository';
 import router from './router';
 import css from './map.module.css';
+import TableView from './TableView';
 
 class Map extends React.Component {
   constructor(props) {
@@ -14,7 +15,8 @@ class Map extends React.Component {
       id: item.id,
       name: item.name,
       level: item.level,
-      comment: item.comment
+      comment: item.comment, 
+      list: repository.getList({rootId: id})
     }
   }
 
@@ -43,6 +45,7 @@ class Map extends React.Component {
       <>
         <h1>Map</h1>
         <div className={css.container}>
+          <TableView list={this.state.list} />
           <Toolbar 
             type="alert"
             location={['right', 'bottom', 'vertical']}

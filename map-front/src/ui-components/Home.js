@@ -15,6 +15,7 @@ class Home extends React.Component {
     }
   }
 
+  // Map Creation on Home Screen
   add() {
     repository.save({
       name: 'Good idea!',
@@ -38,6 +39,7 @@ class Home extends React.Component {
     this.setState({list: repository.getList({level: 0})});
   }
 
+  // Routes to selected map from Home Screen
   getMap(id) {
     router.setRoute('map', id);
   }
