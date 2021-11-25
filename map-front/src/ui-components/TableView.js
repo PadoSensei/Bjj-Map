@@ -1,7 +1,7 @@
 import React from 'react';
 import css from './tableview.module.css';
 
-function TableView({id, list}) {
+function TableView({id, list, onClick}) {
   return (
     <div className={css.container}>
       <table className={css.table}>
@@ -15,9 +15,10 @@ function TableView({id, list}) {
           </tr>
         </thead>
         <tbody>
-          {list && list.map((item, index) => (
+          {list.map((item, index) => (
             <tr 
               key={item.id}
+              onClick={() => onClick(item.id)}
               className={(index % 2 ? css.odd : css) + ' ' + (item.id === id ? css.selected : '')}
               >
               <td>{item.id}</td>

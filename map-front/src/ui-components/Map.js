@@ -9,16 +9,28 @@ import TableView from './TableView';
 class Map extends React.Component {
   constructor(props) {
     super(props);
-    const id = Number(router.getParams());
-    const item = repository.getItem(id);
+    const rootId = Number(router.getParams());
+    const list = repository.getList({rootId});
+    const item = list[0];
     this.state = {
       id: item.id,
       name: item.name,
       level: item.level,
       comment: item.comment, 
-      list: repository.getList({rootId: id})
+      rootId,
+      list
     }
   }
+
+  setSelected = (id) => {
+    const item = repository.getItem(id);
+    this.setState({
+        id: item.id,
+        name: item.name,
+        level: item.level,
+        comment: item.comment
+    });
+  };
 
   changeName = (e) => {
     const name = e.target.value;
@@ -35,6 +47,42 @@ class Map extends React.Component {
     this.setState({ comment });
   }
 
+  // Create new Map entry
+  add() {
+    const item = repository.save({
+        name: 'New item',
+        level: this.state.level + 1,
+        rootId: this.state.rootId,
+        parentId: this.state.id,
+        comment: ''
+    });
+    const list = repository.getList({ rootId: this.state.rootId });
+    this.setState({
+        id: item.id,
+        name: item.name,
+        level: item.level,
+        comment: item.comment,
+        list
+    });
+  }
+
+  delete = () => {
+    repository.delete(this.state.id);
+    const list = repository.getList({rootId: this.state.rootId});
+    if (!list.length) {
+      router.setRoute('home');
+      return; 
+    }
+    const item = list[0];
+    this.setState({
+      id: item.id,
+      name: item.name,
+      level: item.level, 
+      comment: item.comment, 
+      list
+    });
+  }
+
   actionList = [
     { name: 'add', onClick: () => this.add() },
     { name: 'delete', onClick: () => this.delete() }
@@ -45,7 +93,11 @@ class Map extends React.Component {
       <>
         <h1>Map</h1>
         <div className={css.container}>
-          <TableView list={this.state.list} />
+          <TableView 
+            id={this.state.id} 
+            list={this.state.list}
+            onClick={this.setSelected}
+          />
           <Toolbar 
             type="alert"
             location={['right', 'bottom', 'vertical']}

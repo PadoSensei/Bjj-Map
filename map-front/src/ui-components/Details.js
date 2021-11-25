@@ -18,13 +18,13 @@ function Details({id, name, level, comment, onChangeName, onChangeComment}) {
                   <label>Name</label>
                   <input className={css.input}
                       onChange={onChangeName}
-                      defaultValue={name} type="text" />
+                      value={name} type="text" />
               </fieldset>
               <fieldset>
                   <label>Comment</label>
                   <textarea rows="10"
                       onChange={onChangeComment}
-                      defaultValue={comment} className={css.textarea}></textarea>
+                      value={comment} className={css.textarea}></textarea>
               </fieldset>
           </form>
       </div>

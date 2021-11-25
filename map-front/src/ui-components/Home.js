@@ -20,7 +20,7 @@ class Home extends React.Component {
     repository.save({
       name: 'Good idea!',
       level: 0,
-      parentId: null
+      parentId: null,
     });
     this.setState({list: repository.getList({level: 0})})
   }
