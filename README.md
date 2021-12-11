@@ -33,10 +33,15 @@
 - Key Details Breakdown
 - 'Drilling' mode; concept / order checking questions / SRT cards
 
-### ToDo
+### ToDo 
 
 ### Progress
 - Basic App outline, CSS and toolbars
 - Routing Added
 - Data repository methods for local storage added
 - Home screen interface - add / select / delete maps
+- Added Toolbar to Map screen
+- Add / Delete items from Map screen
+
+### Refactor
+- Error handle deleting original node (First Map)

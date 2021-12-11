@@ -5,6 +5,7 @@ import repository from './repository';
 import router from './router';
 import css from './map.module.css';
 import TableView from './TableView';
+import Chart from './Chart';
 
 class Map extends React.Component {
   constructor(props) {
@@ -88,22 +89,39 @@ class Map extends React.Component {
     { name: 'delete', onClick: () => this.delete() }
   ];
 
+  viewMenu = [
+    { name: 'viewList', onClick: () => this.setState({view: 'table'}) },
+    { name: 'hive', onClick: () => this.setState({view: 'chart'}) }
+  ];
+
+  // Refactor with ternary
   render(){
+    let view;
+    if(this.state.view === 'table') {
+      view = <TableView 
+              id={this.state.id} 
+              list={this.state.list}
+              onClick={this.setSelected}
+            />
+    } else {
+      view = <Chart
+              id={this.state.id} 
+              list={this.state.list}
+              onClick={this.setSelected}
+            />
+    }
     return (
       <>
         <h1>Map</h1>
         <div className={css.container}>
-          <TableView 
-            id={this.state.id} 
-            list={this.state.list}
-            onClick={this.setSelected}
-          />
+          {view}
           <Toolbar 
             type="alert"
             location={['right', 'bottom', 'vertical']}
             list={this.actionList}
           />
         </div>
+        <Toolbar list={this.viewMenu} type='default' location={['vertical', 'left', 'bottom']} />
           <Details 
             id={this.state.id}
             level={this.state.level}

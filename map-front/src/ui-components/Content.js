@@ -10,15 +10,10 @@ function Content({component}) {
     { name: 'panTool', onClick: () => alert('Pan click!') }
   ];
 
-  const viewMenu =[
-    { name: 'viewList', onClick: () => alert('View click!') },
-    { name: 'hive', onClick: () => alert('Hive click!') }
-  ];
   return (
     <div className={css.container}>
       {component}
       <Toolbar list={zoomMenu} type='default' location={['horisontal', 'right', 'top']} />
-      <Toolbar list={viewMenu} type='default' location={['vertical', 'left', 'bottom']} />
     </div>
   )
 }

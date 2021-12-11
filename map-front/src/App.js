@@ -5,6 +5,7 @@ import Header from "./ui-components/Header";
 import LeftMenu from "./ui-components/LeftMenu";
 import router from "./ui-components/router";
 import routes from "./ui-components/routes";
+import {} from "./App.css";
 
 class App extends React.Component {
   constructor(props) {
