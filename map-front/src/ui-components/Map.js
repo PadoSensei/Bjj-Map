@@ -19,8 +19,54 @@ class Map extends React.Component {
       level: item.level,
       comment: item.comment, 
       rootId,
-      list
+      list, 
+      zoom: 1,
+      moveMode: false,
+      x: 0,
+      y: 0
     }
+  }
+
+  // Drag Functionality
+  toggleMoveMode = () => {
+    const moveMode = !this.state.moveMode;
+    this.setState({moveMode});
+  }
+
+  onMouseDown = (e) => {
+    if (!this.state.moveMode) {
+      return;
+    }
+    this.isDragging = true;
+    this.startX = this.state.x * this.state.zoom + e.clientX;
+    this.startY = this.state.y * this.state.zoom + e.clientY;
+  };
+
+  onMouseMove = (e) => {
+    if (!this.isDragging) {
+      return;
+    }
+    e.preventDefault();
+    const x = (this.startX - e.clientX) * this.state.zoom;
+    const y = (this.startY - e.clientY) * this.state.zoom;
+    this.setState({x, y});
+  };
+
+  onMouseUp = () => {
+    this.isDragging = false;
+  }
+  
+  // Zoom Functionality
+  ZOOM_FACTOR = 1.1;
+  
+  zoomIn = () => {
+    const zoom = this.state.zoom * this.ZOOM_FACTOR;
+    this.setState({zoom});
+  }
+
+  zoomOut = () => {
+    const zoom = this.state.zoom / this.ZOOM_FACTOR;
+    this.setState({zoom});
   }
 
   setSelected = (id) => {
@@ -106,6 +152,16 @@ class Map extends React.Component {
     } else {
       view = <Chart
               id={this.state.id} 
+              zoom={this.state.zoom}
+              onZoomIn={this.zoomIn}
+              onZoomOut={this.zoomOut}
+              onToggleMoveMode={this.toggleMoveMode}
+              x={this.state.x}
+              y={this.state.y}
+              onMouseDown={this.onMouseDown}
+              onMouseMove={this.onMouseMove}
+              onMouseUp={this.onMouseUp}
+
               list={this.state.list}
               onClick={this.setSelected}
             />

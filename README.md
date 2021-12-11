@@ -45,3 +45,4 @@
 
 ### Refactor
 - Error handle deleting original node (First Map)
+- Styling of text Aligment within each node. 
