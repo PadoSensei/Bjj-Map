@@ -4,9 +4,9 @@ import ChartElement from './ChartElement';
 import Connection from './Connection';
 import Toolbar from './Toolbar';
 
-function Chart({id, list, onClick, zoom, onZoomIn, onZoomOut, onToggleMoveMode, onMouseDown, onMouseMove, onMouseUp, x, y}) {
-  const WIDTH = 400 / zoom;
-  const HEIGHT = 200 / zoom;
+function Chart({id, list, onClick, zoom, onZoomIn, onZoomOut, onToggleMoveMode, onMouseDown, onMouseMove, onMouseUp, x, y, width, height}) {
+  const WIDTH = width / zoom;
+  const HEIGHT = height / zoom;
   const Radius = 90;
 
   const getChildren = (list, parent, elements, dPhi) => {

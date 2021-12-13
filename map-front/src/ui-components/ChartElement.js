@@ -23,7 +23,19 @@ function ChartElement(props) {
   }
   const root = <circle className={className} cx={props.x} cy={props.y} r="40" fill="none" stroke="black" />
   const child = <rect className={className} rx="3" ry="3" x={x} y={props.y - HEIGHT / 2} width={WIDTH} height={HEIGHT} fill="none" stroke="black" />
-  const element = props.level === 0 ? root : child;
+  const grandChild = <circle cx={props.x} cy={props.y} r={3} className={className} />
+  let element;
+  switch(props.level) {
+    case 0:
+      element = root;
+      break;
+    case 1:
+      element = child;
+      break;
+    default:
+      element = grandChild;
+      break;
+  }
   return (
     <g onClick={() => props.onClick(props.id)}>
       {element}

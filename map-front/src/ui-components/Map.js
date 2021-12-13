@@ -8,11 +8,14 @@ import TableView from './TableView';
 import Chart from './Chart';
 
 class Map extends React.Component {
+  DEFAULT_WIDTH = 400;
+  DEFAULT_HEIGHT = 200;
   constructor(props) {
     super(props);
     const rootId = Number(router.getParams());
     const list = repository.getList({rootId});
     const item = list[0];
+    this.wrapper = React.createRef();
     this.state = {
       id: item.id,
       name: item.name,
@@ -23,7 +26,9 @@ class Map extends React.Component {
       zoom: 1,
       moveMode: false,
       x: 0,
-      y: 0
+      y: 0, 
+      width: this.DEFAULT_WIDTH,
+      height: this.DEFAULT_HEIGHT
     }
   }
 
@@ -93,7 +98,21 @@ class Map extends React.Component {
     repository.save(item);
     this.setState({ comment });
   }
+  
+  onResize = () => {
+    const width = this.wrapper.current.clientWidth;
+    const height = this.wrapper.current.clientHeight;
+    this.setState({width, height});
+  }
 
+  componentDidMount(){
+    this.onResize();
+    window.addEventListener('resize', this.onResize);
+  }
+
+  componentWillUnmount(){
+    window.removeEventListener('resize', this.onResize);
+  }
   // Create new Map entry
   add() {
     const item = repository.save({
@@ -158,10 +177,11 @@ class Map extends React.Component {
               onToggleMoveMode={this.toggleMoveMode}
               x={this.state.x}
               y={this.state.y}
+              width={this.state.width}
+              height={this.state.height}
               onMouseDown={this.onMouseDown}
               onMouseMove={this.onMouseMove}
               onMouseUp={this.onMouseUp}
-
               list={this.state.list}
               onClick={this.setSelected}
             />
@@ -169,7 +189,7 @@ class Map extends React.Component {
     return (
       <>
         <h1>Map</h1>
-        <div className={css.container}>
+        <div className={css.container} ref={this.wrapper}>
           {view}
           <Toolbar 
             type="alert"
