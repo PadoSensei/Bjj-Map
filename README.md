@@ -46,3 +46,5 @@
 ### Refactor
 - Error handle deleting original node (First Map)
 - Styling of text Aligment within each node. 
+- onMouseLeave on LeftMenu not working / Focus on LeftMenu container on click
+- Breadcrumbs backslash not visible

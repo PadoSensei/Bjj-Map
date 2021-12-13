@@ -14,10 +14,23 @@ class App extends React.Component {
     const route = router.getRoute();
     this.state = {
       component: route.component,
-      breadcrumbs: route.breadcrumbs
+      breadcrumbs: route.breadcrumbs, 
+      isMenuVisible: false
     };
     router.subscribe(this.onRouteChange);
   }
+
+  toggleMenu = () => {
+    const isMenuVisible = !this.state.isMenuVisible;
+    this.setState({isMenuVisible});
+    console.log("Testing clcik")
+  }
+
+  hideMenu = () => {
+    this.setState({isMenuVisible: false});
+    console.log("Testing move")
+  }
+
   _isMounted = false;
   componentDidMount() {
     this._isMounted = true;
@@ -34,8 +47,8 @@ class App extends React.Component {
   render(){
     return (
       <div>
-        <Header />
-        <LeftMenu />
+        <Header onMenuClick={this.toggleMenu}/>
+        <LeftMenu isMenuVisible={this.state.isMenuVisible} onMouseLeave={this.hideMenu}/>
         <Breadcrumbs list={this.state.breadcrumbs} />
         <Content component={this.state.component} />
       </div>

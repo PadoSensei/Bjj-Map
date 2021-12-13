@@ -8,8 +8,13 @@ function LeftMenu(props) {
     { name: 'home', onClick: () => router.setRoute('home') },
     { name: 'help', onClick: () => router.setRoute('help') }
   ];
+
+  let className = css.container;
+  if (props.isMenuVisible){
+    className += ' ' + css.visible;
+  }
   return (
-    <div className={css.container}>
+    <div className={className} onMouseLeave={() => props.onMouseLeave()}>
       <Toolbar list={list} type="primary" location={['vertical']} />
     </div>
   )
