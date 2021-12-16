@@ -2,11 +2,15 @@ import React from 'react';
 import css from './leftmenu.module.css';
 import router from './router';
 import Toolbar from './Toolbar';
+import { useAuth0 } from '@auth0/auth0-react';
 
 function LeftMenu(props) {
+  const { logout } = useAuth0();
+
   const list =[
     { name: 'home', onClick: () => router.setRoute('home') },
-    { name: 'help', onClick: () => router.setRoute('help') }
+    { name: 'help', onClick: () => router.setRoute('help') },
+    { name: 'logout', onClick: () => logout()}
   ];
 
   let className = css.container;

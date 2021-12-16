@@ -8,7 +8,7 @@
 
 .text {
   font-size: 10px;
-  alignment-baseline: middle;
+  vertical-align: text-bottom;
 }
 
 .left {

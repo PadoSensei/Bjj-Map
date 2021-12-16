@@ -33,7 +33,11 @@
 - Key Details Breakdown
 - 'Drilling' mode; concept / order checking questions / SRT cards
 
-### ToDo 
+### ToDo
+- Profile Screen with user info
+- How to add database?
+- Deploy basic
+- Fix app colours (Increase from white to black over time)
 
 ### Progress
 - Basic App outline, CSS and toolbars
@@ -42,6 +46,8 @@
 - Home screen interface - add / select / delete maps
 - Added Toolbar to Map screen
 - Add / Delete items from Map screen
+- Fixed CSS on mindmap
+- Basic auth with Auth0
 
 ### Refactor
 - Error handle deleting original node (First Map)

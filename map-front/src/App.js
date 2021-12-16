@@ -23,12 +23,10 @@ class App extends React.Component {
   toggleMenu = () => {
     const isMenuVisible = !this.state.isMenuVisible;
     this.setState({isMenuVisible});
-    console.log("Testing clcik")
   }
 
   hideMenu = () => {
     this.setState({isMenuVisible: false});
-    console.log("Testing move")
   }
 
   _isMounted = false;

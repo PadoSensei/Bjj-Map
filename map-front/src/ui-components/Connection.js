@@ -1,7 +1,7 @@
 import React from 'react'
 import css from './connection.module.css';
 
-function Connection({list, isLeftSide}) {
+function Connection({list}) {
   function getElement(element){
     if (element.level === 0){
       return null;
@@ -11,7 +11,8 @@ function Connection({list, isLeftSide}) {
     const dy = element.y - element.py;
     const d = `M ${element.px} ${element.py} c ${DX} 0, ${dx - DX} ${dy}, ${dx} ${dy}`;
     return (
-      <path 
+      <path
+        key={element.id}
         d={d}
         className={css.connection}
       />
