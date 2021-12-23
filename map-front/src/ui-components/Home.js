@@ -13,6 +13,10 @@ function Home (props) {
   const [list, setList] = React.useState(repository.getList({level: 0}));
   const [id, setId] = React.useState(1);
 
+  if (user){
+    console.log(user)
+  }
+
   // Map Creation on Home Screen
   const addNode = () => {
     repository.save({
