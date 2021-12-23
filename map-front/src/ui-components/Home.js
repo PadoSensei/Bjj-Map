@@ -16,7 +16,7 @@ function Home (props) {
   // Map Creation on Home Screen
   const addNode = () => {
     repository.save({
-      name: 'Good idea!',
+      name: 'Rename idea',
       level: 0,
       parentId: null,
     });
@@ -48,9 +48,10 @@ function Home (props) {
         <h1>Home</h1>
         <Toolbar list={actionMenu} type='alert' location={['vertical', 'right', 'bottom']} />
         <div className={css.list}>
+          {/* Auth disabled for production with poor internet */}
           <div>
             {!isAuthenticated && <LoginView isAuthenticated={isAuthenticated}/>}
-          </div>
+          </div> 
           {
             isAuthenticated && list.map(item => (
               <div className={css.item}key={item.id}>

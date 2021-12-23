@@ -1,44 +1,59 @@
-# Bjj-Map
+# Map-Pad
 ### Progress Tracker and MindMap App
-
+#### Guiding subjects
+- Brazilian Jujitsu
+- Music
+- ESL
 ### Key features
 - Map knowledge of Bjj techniques / flows using mindmaps
 - Track progress with colour-coded nodes
 - Coach / Student modes
-- Technique / Concept Node
+- Each Technique / Concept Node has testable, trackable info for Spaced Repetition Software (SRS) 
 
 ### Ideas 
 - Node 'levels up' from white to black levels
 - Roll tracker; keep count of subs and sweeps scored and conceded, problem positions
+- Open Mat Planner highlights with 'problem areas' what should be practiced at open mat. 
 
 ### Stack
 - React? (npx CRA)
 - Css?
 - Typescript?
-- Database?
+- Database & Auth (Auth0 & Hasura) 
 
-#### Coach Mode
+#### Coach / Teacher Mode
+- Has skill tree of all personally known techniques.
 - Create class / progress track
 - Assign node to students in track
 - Admin powers
+- Analytics - Attendence - Problems - Popular techniques
+- All classes / created nodes are trackable
 
 #### Student Mode
+- Has skill tree of all personally known techniques.
+- Can create class and make public for others to enroll in. 
 - Enroll in class / progress track
 - Import / Export nodes to other app users
-- Comment on Node
-- 'Drill' Node with concept checking questions. 
+- Comment on Nodes
+- 'Drill' Node with concept checking questions, SRS
 
 #### Node
-- Video / Gif of technique
+- Video / Gif of technique - Derive from youtube url - Screen grab and annotate
+- Japanese / Portuguese translation
+- SRS Data
 - Key Details Breakdown
-- 'Drilling' mode; concept / order checking questions / SRT cards
+- Progress tracking / How many times you hit this tech? Problems?
+- 'Drilling' mode; concept / order checking questions / SRS cards
+- Links to extra examples
+- MiniTech Map for grips, counters
 
 ### ToDo
 - Profile Screen with user info
-- How to add database?
+- How to add database? Models for maps and nodes.
 - Deploy basic
 - Fix app colours (Increase from white to black over time)
-
+- Basic Testing
+- Refactor progress to Typescript
 ### Progress
 - Basic App outline, CSS and toolbars
 - Routing Added
@@ -48,9 +63,16 @@
 - Add / Delete items from Map screen
 - Fixed CSS on mindmap
 - Basic auth with Auth0
+- Built out mock maps for BJJ and ESL
 
 ### Refactor
 - Error handle deleting original node (First Map)
-- Styling of text Aligment within each node. 
+- ~~Styling of text Aligment within each node~~
 - onMouseLeave on LeftMenu not working / Focus on LeftMenu container on click
 - Breadcrumbs backslash not visible
+- Make nodes collapsable on map
+- User rank defines CSS colour (white, blue, purple, brown, black, red?)
+## Ambition
+- Add SRS study functionality
+- Add Youtube clip editing in node
+- Node object - define shape and model

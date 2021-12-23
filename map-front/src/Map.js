@@ -1,8 +1,5 @@
 import React from 'react'
 import MindMap from 'react-mindmap';
-//import { nodes, connections } from './my-map.json';
-// const nodes = require("./nodes.json")
-// const connections = require('./connections.json');
 
 const nodes = [
   {
@@ -34,25 +31,8 @@ function Map() {
         nodes={ {nodes} }
         connections={ {connections} }
       />
-      <p>hello</p>
     </div>
   )
 }
 
 export default Map
-
-// import { Component } from 'react';
-// import { render } from 'react-dom';
- 
-// class Example extends Component {
-//   render() {
-//     return (
-      
-//     );
-//   }
-// }
- 
-// render(
-//   <Example nodes={nodes} connections={connections} />,
-//   document.getElementById('target')
-// );

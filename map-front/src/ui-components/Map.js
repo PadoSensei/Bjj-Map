@@ -116,7 +116,7 @@ class Map extends React.Component {
   // Create new Map entry
   add() {
     const item = repository.save({
-        name: 'New item',
+        name: 'Rename item',
         level: this.state.level + 1,
         rootId: this.state.rootId,
         parentId: this.state.id,

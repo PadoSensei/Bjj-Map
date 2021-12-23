@@ -10,7 +10,6 @@ function Card({ name, comment, isSelected, onClick }) {
     <div className={className} onClick={onClick}>
         <div className={css.title}>{name}</div>
         <div className={css.comment}>{comment}</div>
-     
     </div>
   )
 }
