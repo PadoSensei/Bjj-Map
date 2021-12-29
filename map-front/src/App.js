@@ -3,8 +3,8 @@ import Breadcrumbs from "./ui-components/Breadcrumbs";
 import Content from "./ui-components/Content";
 import Header from "./ui-components/Header";
 import LeftMenu from "./ui-components/LeftMenu";
-import router from "./ui-components/router";
-import routes from "./ui-components/routes";
+import router from "./router";
+import routes from "./routes";
 import {} from "./App.css";
 
 class App extends React.Component {

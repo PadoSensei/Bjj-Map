@@ -1,6 +1,6 @@
 {
   "name": "map-front",
-  "homepage": "https://github.com/PadoSensei/Bjj-Map",
+  "homepage": "https://github.com/PadoSensei/Bjj-Map/map-front",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

@@ -1,13 +1,16 @@
 import React from 'react';
-import repository from './repository';
+import repository from '../repository';
 import Toolbar from './Toolbar';
 import Card from './Card';
 import css from './home.module.css';
-import router from './router';
+import router from '../router';
 import LoginView from './LoginView';
 import { useAuth0 } from '@auth0/auth0-react';
+ 
 
-// Refactor to functional component with hooks? 
+// Refactored from class component
+// Functional Component requires useEffect to rerender after creating / deleting maps.
+
 function Home (props) {
   const { user, isAuthenticated } = useAuth0();
   const [list, setList] = React.useState(repository.getList({level: 0}));

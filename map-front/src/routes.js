@@ -1,6 +1,6 @@
-import Help from "./Help";
-import Home from "./Home";
-import Map from "./Map";
+import Help from "./ui-components/Help";
+import Home from "./ui-components/Home";
+import Map from "./ui-components/Map";
 
 
 const routes = {
