@@ -20,6 +20,11 @@ function Home (props) {
     console.log(user)
   }
 
+  // Work in Progress
+  // React.useEffect(() => {
+  //   console.log("Rerendering...")
+  // }, [list]);
+
   // Map Creation on Home Screen
   const addNode = () => {
     repository.save({
@@ -62,7 +67,7 @@ function Home (props) {
           {
             isAuthenticated && list.map(item => (
               <div className={css.item}key={item.id}>
-                <button onClick={() => getMap(id)}>Go to map...</button>
+                <button onClick={() => getMap(item.id)}>Go to map...</button>
                 <Card 
                   id={item.id} 
                   name={item.name} 

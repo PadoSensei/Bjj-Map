@@ -33,6 +33,7 @@ class Map extends React.Component {
   }
 
   // Drag Functionality
+  // Refactor; Drag icon needs to change when drag is active
   toggleMoveMode = () => {
     const moveMode = !this.state.moveMode;
     this.setState({moveMode});

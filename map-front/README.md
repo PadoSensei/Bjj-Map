@@ -51,6 +51,7 @@
 - Fixed CSS on mindmap
 - Basic auth with Auth0
 - Built out mock maps for BJJ and ESL
+- Add Profile route, component and add icon.
 
 ### Refactor
 - Error handle deleting original node (First Map)

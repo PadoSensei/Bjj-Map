@@ -9,6 +9,8 @@ function LeftMenu(props) {
 
   const list =[
     { name: 'home', onClick: () => router.setRoute('home') },
+    { name: 'profile', onClick: () => router.setRoute('profile') },
+    { name: 'study', onClick: () => router.setRoute('study') },
     { name: 'help', onClick: () => router.setRoute('help') },
     { name: 'logout', onClick: () => logout()}
   ];
