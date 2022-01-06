@@ -1,6 +1,11 @@
 # Map-Pad
 ### Progress Tracker and MindMap App
 
+<img src="images\Home.png" alt="Home" width="200"/>
+<img src="images\BJJ Chart.png" alt="Bjj Chart View" width="200"/>
+<img src="images\BJJ Map.png" alt="Bjj Map View" width="200"/>
+<img src="images\ESL Map.png" alt="ESL Map View" width="200"/>
+
 ### How to install
 - clone repo
 > cd map-front
@@ -21,11 +26,12 @@
 - Library of techniques / nodes using mindmaps
 - Each Technique / Concept Node has testable, trackable info for Spaced Repetition Software (SRS) 
 - User can create 'classes' of nodes others can enroll in.
-- Track progress of those enrolled with colour-coded nodes and analytics.
+- Self trackiing analytics
+- Track progress of 'students' enrolled in 'class' with colour-coded nodes and analytics.
 
 ### Key Goals
-- Create a practical full stack MERN app.
+- Create a practical full stack MERN app with multiuser functionality.
 - Learn how to provide full test coverage.
 - Mock up version control processes (branching, merging and code reviews).
 - Understand Typescript through gradual implementation. 
-- Better understanding of documentation and commenting best practices. 
+- Better understanding of documentation and code commenting best practices. 

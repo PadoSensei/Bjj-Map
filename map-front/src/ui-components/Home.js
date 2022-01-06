@@ -21,9 +21,9 @@ function Home (props) {
   }
 
   // Work in Progress
-  // React.useEffect(() => {
-  //   console.log("Rerendering...")
-  // }, [list]);
+  React.useEffect(() => {
+    console.log("Rerendering...")
+  }, [list]);
 
   // Map Creation on Home Screen
   const addNode = () => {

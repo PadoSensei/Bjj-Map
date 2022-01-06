@@ -1,11 +1,16 @@
-import React from 'react'
-import css from './profile.module.css';
+import React from 'react';
+import { useAuth0 } from '@auth0/auth0-react';
+//import css from './profile.module.css';
 
 const Profile = () => {
+  const { user, isAuthenticated } = useAuth0();
   return (
+    isAuthenticated && (
     <div>
-      This is where the profile goes
+      {user.given_name}
+      {user.email}
     </div>
+    )
   )
 }
 
