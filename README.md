@@ -18,7 +18,7 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/cad46bcc-89ca-410b-93de-7812e47a0745/deploy-status)](https://app.netlify.com/sites/pado-map-tracker/deploys)
 - [Pado-Map-Tracker](https://pado-map-tracker.netlify.app/)
 
-#### App will ultimately aim to subject agnostic but will be designed toward supporting three subjects
+#### App will ultimately aim to be subject agnostic but will be designed toward supporting three subjects
 - Brazilian Jujitsu
 - Music (Guitar / Piano)
 - ESL

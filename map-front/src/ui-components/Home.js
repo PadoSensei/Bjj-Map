@@ -22,8 +22,13 @@ function Home (props) {
 
   // Work in Progress
   React.useEffect(() => {
-    console.log("Rerendering...")
+    setList(repository.getList({level: 0}))
   }, [list]);
+  
+  const actionMenu = [
+    { name: 'add', onClick: () => addNode() },
+    { name: 'delete', onClick: () => deleteNode(id) }
+  ];
 
   // Map Creation on Home Screen
   const addNode = () => {
@@ -34,11 +39,6 @@ function Home (props) {
     });
     setList({list: repository.getList({level: 0})})
   }
-
-  const actionMenu = [
-    { name: 'add', onClick: () => addNode() },
-    { name: 'delete', onClick: () => deleteNode(id) }
-  ];
 
   const setSelected = (id) => {
     setId(id)
