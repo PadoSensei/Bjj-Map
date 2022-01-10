@@ -4,21 +4,21 @@ import Toolbar from './Toolbar';
 import Card from './Card';
 import css from './home.module.css';
 import router from '../router';
-import LoginView from './LoginView';
-import { useAuth0 } from '@auth0/auth0-react';
+// import LoginView from './LoginView';
+// import { useAuth0 } from '@auth0/auth0-react';
  
 
 // Refactored from class component
 // Functional Component requires useEffect to rerender after creating / deleting maps.
 
 function Home (props) {
-  const { user, isAuthenticated } = useAuth0();
+  // const { user, isAuthenticated } = useAuth0();
   const [list, setList] = React.useState(repository.getList({level: 0}));
   const [id, setId] = React.useState(1);
 
-  if (user){
-    console.log(user)
-  }
+  // if (user){
+  //   console.log(user)
+  // }
 
   // Work in Progress
   React.useEffect(() => {
@@ -61,11 +61,11 @@ function Home (props) {
         <Toolbar list={actionMenu} type='alert' location={['vertical', 'right', 'bottom']} />
         <div className={css.list}>
           {/* Auth disabled for production with poor internet */}
-          <div>
+          {/* <div>
             {!isAuthenticated && <LoginView isAuthenticated={isAuthenticated}/>}
-          </div> 
+          </div>  */}
           {
-            isAuthenticated && list.map(item => (
+            list.map(item => (
               <div className={css.item}key={item.id}>
                 <button onClick={() => getMap(item.id)}>Go to map...</button>
                 <Card 
@@ -78,6 +78,20 @@ function Home (props) {
               </div>
             ))
           }
+          {/* {
+            isAuthenticated && list.map(item => (
+              <div className={css.item}key={item.id}>
+                <button onClick={() => getMap(item.id)}>Go to map...</button>
+                <Card 
+                  id={item.id} 
+                  name={item.name} 
+                  comment={item.comment} 
+                  isSelected={item.id === id}
+                  onClick={() => setSelected(item.id)}
+                />
+              </div>
+            ))
+          } */}
         </div>
       </>
     )
