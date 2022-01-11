@@ -1,6 +1,6 @@
 import React from 'react';
 import css from './leftmenu.module.css';
-import router from '../router';
+import router from '../utils/router';
 import Toolbar from './Toolbar';
 import { useAuth0 } from '@auth0/auth0-react';
 

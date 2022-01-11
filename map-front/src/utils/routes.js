@@ -1,8 +1,8 @@
-import Help from "./ui-components/Help";
-import Home from "./ui-components/Home";
-import Map from "./ui-components/Map";
-import Profile from "./ui-components/Profile";
-import Study from "./ui-components/Study";
+import Help from "../ui-components/Help";
+import Home from "../ui-components/Home";
+import Map from "../ui-components/Map";
+import Profile from "../ui-components/Profile";
+import Study from "../ui-components/Study";
 
 
 const routes = {

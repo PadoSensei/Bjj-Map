@@ -1,6 +1,6 @@
 import React from 'react';
 import css from './breadcrumbs.module.css';
-import router from '../router';
+import router from '../utils/router';
 
 function Breadcrumbs({ list }) {
   return (
